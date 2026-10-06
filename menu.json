@@ -1,0 +1,384 @@
+{
+  "طعمية": [
+    {
+      "name": "طعمية تحابيش",
+      "price": 4,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طعمية بالبيض",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طعمية بالحمص",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طعمية إسكندراني",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طعمية محشية",
+      "price": 6,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طعمية كل شيء",
+      "price": 6,
+      "image": "",
+      "description": ""
+    }
+  ],
+  "سندوتشات البيض": [
+    {
+      "name": "بيض مقلي أو مسلوق",
+      "price": 3,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "شكشوكة",
+      "price": 4,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "بيض بالجبنة",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "بيض بالبسترمة",
+      "price": 6,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "بيض بيتزا",
+      "price": 7,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "بيض أباتشي",
+      "price": 7,
+      "image": "",
+      "description": ""
+    }
+  ],
+  "سندوتشات البطاطس": [
+    {
+      "name": "صوابع أو شيبسي",
+      "price": 3,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "بطاطس كاتشب - مايونيز",
+      "price": 4,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "بطاطس بالبيض",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "بطاطس بالجبنة",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "بطاطس جمبري",
+      "price": 4,
+      "image": "",
+      "description": ""
+    }
+  ],
+  "سندوتشات متنوعة": [
+    {
+      "name": "كبدة إسكندراني",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "سجق بلدي",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "جبنة طماطم / جبنة مش",
+      "price": 3,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "سندوتش هريسة",
+      "price": 4,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "سندوتش عجة",
+      "price": 4,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "سندوتش باذنجوج",
+      "price": 3,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "سندوتش مسقعة",
+      "price": 3,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "سندوتش حلاوة بالقشطة",
+      "price": 5,
+      "image": "",
+      "description": ""
+    }
+  ],
+  "سندوتشات الفول": [
+    {
+      "name": "فول عادي",
+      "price": 3,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "فول زيت حار / سمنة / صلصة",
+      "price": 4,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "فول إسكندراني",
+      "price": 4,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "فول بالبيض",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "فول بالليمون المعصفر",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "فول بالسجق / البسترمة",
+      "price": 6,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "فول ديناميت",
+      "price": 6,
+      "image": "",
+      "description": ""
+    }
+  ],
+  "أطباق وعلب": [
+    {
+      "name": "صحن مشكل تحابيش مصرية - صغير",
+      "price": 12,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "صحن مشكل تحابيش مصرية - وسط",
+      "price": 17,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "صحن مشكل تحابيش مصرية - كبير",
+      "price": 25,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "علبة مسقعة",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "علبة حمص",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طبق قرنبيط (زهرة)",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طبق عجة إسكندراني",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طبق عجة طعمية",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طبق بصلة",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طبق كبدة سادة",
+      "price": 10,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طبق سجق سادة",
+      "price": 10,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "وجبة كبدة أو سجق",
+      "price": 15,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "علبة مكرونة بالكبدة",
+      "price": 12,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "علبة مكرونة بالسجق",
+      "price": 12,
+      "image": "",
+      "description": ""
+    }
+  ],
+  "مقبلات وسلطات": [
+    {
+      "name": "جبنة بالطماطم",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "بابا غنوج",
+      "price": 5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طحينة",
+      "price": 4,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "سلطة خضراء",
+      "price": 4,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "باذنجان مخلل",
+      "price": 4,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "ليمون مخلل",
+      "price": 3,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "طماطم مخللة",
+      "price": 3,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "بصل مخلل",
+      "price": 3,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "خيار مخلل",
+      "price": 3,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "مخلل مشكل",
+      "price": 3,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "مخلل عادي",
+      "price": 1,
+      "image": "",
+      "description": ""
+    }
+  ],
+  "مشروبات": [
+    {
+      "name": "عصير مانجو",
+      "price": 4,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "عصير غازي",
+      "price": 2.5,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "شاي سادة",
+      "price": 1,
+      "image": "",
+      "description": ""
+    },
+    {
+      "name": "مياه",
+      "price": 0.5,
+      "image": "",
+      "description": ""
+    }
+  ]
+}

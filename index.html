@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#8e1724">
+<title>تحابيش مصرية | أصل الطعم المصري</title>
+<meta name="description" content="اطلب أكل مصري أصيل من تحابيش مصرية في جدة. توصيل يبدأ من 5 ريال حسب الموقع.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-note">🇪🇬 <span>أصل الطعم المصري</span><b>•</b><span>التوصيل يبدأ من 5 ريال</span></div>
+<header class="topbar">
+  <a class="brand" href="#home">
+    <img src="assets/logo.png" alt="تحابيش مصرية">
+    <div><strong>تحابيش مصرية</strong><span>طعم مصري على أصوله</span></div>
+  </a>
+  <nav><a href="#home">الرئيسية</a><a href="#menu">المنيو</a><a href="#about">عن المطعم</a></nav>
+  <button class="cart-btn" onclick="openCart()"><span>🛒</span> السلة <b id="cartCount">0</b></button>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span></span> فطار مصري • سندوتشات • أطباق</div>
+    <h1>الطعم اللي يفكّرك بـ <em>مصر</em> 🇪🇬</h1>
+    <p>فول وطعمية وسندوتشات وأطباق مصرية معمولة بحب… اطلبها أونلاين وخلي الطعم يوصل لحد بابك.</p>
+    <div class="hero-actions"><a class="primary" href="#menu">اطلب دلوقتي <span>←</span></a><a class="ghost" href="https://wa.me/966592580904" target="_blank">واتساب المطعم</a></div>
+    <div class="hero-trust"><span>✓ طلب سهل</span><span>✓ توصيل حسب الموقع</span><span>✓ دفع عند الاستلام</span></div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card"><img src="assets/dish-5.png" alt="سندوتشات تحابيش مصرية"><div class="hero-sticker">🔥 <b>أصل الطعم</b><small>المصري الأصيل</small></div></div>
+    <div class="floating-pill">🥙 طازج يوميًا</div>
+  </div>
+</section>
+
+<section class="quick-info">
+  <div><span class="ico">📍</span><div><b>مكاننا</b><small>جدة • شارع الأربعين</small></div></div>
+  <div><span class="ico">🚚</span><div><b>التوصيل</b><small>يبدأ من 5 ريال حسب موقعك</small></div></div>
+  <div><span class="ico">📞</span><div><b>للطلب والاستفسار</b><small>0592580904</small></div></div>
+</section>
+
+<main id="menu">
+  <div class="menu-head"><div><div class="eyebrow">اختار اللي نفسك فيه</div><h2>المنيو <span>😋</span></h2></div><div class="search-wrap">⌕<input id="search" oninput="renderMenu()" placeholder="دور على أكلك..." autocomplete="off"></div></div>
+  <div class="category-hint">اسحب الأقسام على جنب من الموبايل <span>←</span></div>
+  <div id="menuGrid"></div>
+</main>
+
+<section id="about" class="about">
+  <div class="about-photo"><img src="assets/dish-3.jpg" alt="أطباق مصرية"><span>❤️ معمول بحب</span></div>
+  <div><div class="eyebrow">حكاية تحابيش</div><h2>مش مجرد أكل… دي <em>حتة من مصر</em></h2><p>من أول لقمة طعمية لحد طبق الكبدة والسجق، بنحاول نوصل لك نفس الروح المصرية اللي بتحبها: طعم واضح، أكل سخن، وطلب سهل.</p><div class="about-points"><span>🥙 طعم مصري أصيل</span><span>🥬 مكونات طازة</span><span>🛵 توصيل لحد بابك</span></div></div>
+</section>
+
+<section class="gallery"><div class="section-kicker">من مطبخنا ليك</div><h2>شوف اللي بيشهّي 😍</h2><div class="gallery-grid"><img src="assets/dish-1.jpg"><img src="assets/dish-2.jpg"><img src="assets/dish-4.png"><img src="assets/dish-5.png"><img src="assets/dish-6.jpg"><img src="assets/dish-7.jpg"></div></section>
+
+<div class="menu-image"><details><summary>تحب تشوف صورة المنيو الأصلية؟</summary><img src="assets/menu-1.png" alt="منيو تحابيش مصرية"></details></div>
+
+<div class="mobile-cart-bar" onclick="openCart()"><span>🛒 <b id="mobileCartCount">0</b> أصناف</span><strong id="mobileCartTotal">0 ريال</strong><span>عرض السلة ←</span></div>
+
+<div id="cartOverlay" class="overlay hidden" onclick="if(event.target===this)closeCart()">
+  <div class="cart">
+    <button class="close" onclick="closeCart()">×</button>
+    <div class="cart-head"><div><div class="eyebrow">جاهز للطلب؟</div><h2>سلتك 🛒</h2></div></div>
+    <div id="cartItems"></div>
+    <div class="totals"><div><span>قيمة الطلب</span><b id="subtotal">0 ريال</b></div><div><span>التوصيل</span><b>يبدأ من 5 ريال</b></div><div class="grand"><span>الإجمالي المبدئي</span><b id="grandTotal">0 ريال</b></div></div>
+    <div class="form">
+      <div class="form-title">بيانات التوصيل</div>
+      <label>الاسم<input id="customerName" placeholder="اسمك الكريم"></label>
+      <label>رقم الجوال<input id="customerPhone" inputmode="tel" placeholder="05xxxxxxxx"></label>
+      <label>العنوان أو ملاحظات الطلب<textarea id="notes" rows="3" placeholder="الحي، الشارع، الدور… أو أي ملاحظة"></textarea></label>
+      <div class="location-box"><div><strong>📍 موقع التوصيل</strong><small id="locationText">حدد موقعك عشان نعرف رسوم التوصيل</small></div><button class="secondary" onclick="getLocation()">حدد موقعي</button></div>
+      <div class="delivery-rates"><b>🚚 التوصيل حسب المسافة</b><span>حتى 3 كم <strong>5 ريال</strong> • 3–5 كم <strong>8 ريال</strong> • 5–8 كم <strong>12 ريال</strong> • أكثر من 8 كم <strong>15 ريال</strong></span><small>الرسوم النهائية تتأكد حسب موقعك عند استلام الطلب.</small></div>
+      <button class="whatsapp" onclick="sendWhatsApp()">إرسال الطلب على واتساب <span>↗</span></button>
+      <p class="tiny">سيتم فتح واتساب برسالة جاهزة تحتوي الأصناف والكمية وبياناتك ورابط موقعك.</p>
+    </div>
+  </div>
+</div>
+
+<footer><div class="footer-brand"><img src="assets/logo.png" alt=""><div><b>تحابيش مصرية</b><small>أصل الطعم المصري</small></div></div><div>جدة • شارع الأربعين • أمام مدارس منارات جدة</div><a href="https://wa.me/966592580904" target="_blank">0592580904</a></footer>
+
+<script>
+const FALLBACK_MENU = {"طعمية": [{"name": "طعمية تحابيش", "price": 4, "image": "", "description": ""}, {"name": "طعمية بالبيض", "price": 5, "image": "", "description": ""}, {"name": "طعمية بالحمص", "price": 5, "image": "", "description": ""}, {"name": "طعمية إسكندراني", "price": 5, "image": "", "description": ""}, {"name": "طعمية محشية", "price": 6, "image": "", "description": ""}, {"name": "طعمية كل شيء", "price": 6, "image": "", "description": ""}], "سندوتشات البيض": [{"name": "بيض مقلي أو مسلوق", "price": 3, "image": "", "description": ""}, {"name": "شكشوكة", "price": 4, "image": "", "description": ""}, {"name": "بيض بالجبنة", "price": 5, "image": "", "description": ""}, {"name": "بيض بالبسترمة", "price": 6, "image": "", "description": ""}, {"name": "بيض بيتزا", "price": 7, "image": "", "description": ""}, {"name": "بيض أباتشي", "price": 7, "image": "", "description": ""}], "سندوتشات البطاطس": [{"name": "صوابع أو شيبسي", "price": 3, "image": "", "description": ""}, {"name": "بطاطس كاتشب - مايونيز", "price": 4, "image": "", "description": ""}, {"name": "بطاطس بالبيض", "price": 5, "image": "", "description": ""}, {"name": "بطاطس بالجبنة", "price": 5, "image": "", "description": ""}, {"name": "بطاطس جمبري", "price": 4, "image": "", "description": ""}], "سندوتشات متنوعة": [{"name": "كبدة إسكندراني", "price": 5, "image": "", "description": ""}, {"name": "سجق بلدي", "price": 5, "image": "", "description": ""}, {"name": "جبنة طماطم / جبنة مش", "price": 3, "image": "", "description": ""}, {"name": "سندوتش هريسة", "price": 4, "image": "", "description": ""}, {"name": "سندوتش عجة", "price": 4, "image": "", "description": ""}, {"name": "سندوتش باذنجوج", "price": 3, "image": "", "description": ""}, {"name": "سندوتش مسقعة", "price": 3, "image": "", "description": ""}, {"name": "سندوتش حلاوة بالقشطة", "price": 5, "image": "", "description": ""}], "سندوتشات الفول": [{"name": "فول عادي", "price": 3, "image": "", "description": ""}, {"name": "فول زيت حار / سمنة / صلصة", "price": 4, "image": "", "description": ""}, {"name": "فول إسكندراني", "price": 4, "image": "", "description": ""}, {"name": "فول بالبيض", "price": 5, "image": "", "description": ""}, {"name": "فول بالليمون المعصفر", "price": 5, "image": "", "description": ""}, {"name": "فول بالسجق / البسترمة", "price": 6, "image": "", "description": ""}, {"name": "فول ديناميت", "price": 6, "image": "", "description": ""}], "أطباق وعلب": [{"name": "صحن مشكل تحابيش مصرية - صغير", "price": 12, "image": "", "description": ""}, {"name": "صحن مشكل تحابيش مصرية - وسط", "price": 17, "image": "", "description": ""}, {"name": "صحن مشكل تحابيش مصرية - كبير", "price": 25, "image": "", "description": ""}, {"name": "علبة مسقعة", "price": 5, "image": "", "description": ""}, {"name": "علبة حمص", "price": 5, "image": "", "description": ""}, {"name": "طبق قرنبيط (زهرة)", "price": 5, "image": "", "description": ""}, {"name": "طبق عجة إسكندراني", "price": 5, "image": "", "description": ""}, {"name": "طبق عجة طعمية", "price": 5, "image": "", "description": ""}, {"name": "طبق بصلة", "price": 5, "image": "", "description": ""}, {"name": "طبق كبدة سادة", "price": 10, "image": "", "description": ""}, {"name": "طبق سجق سادة", "price": 10, "image": "", "description": ""}, {"name": "وجبة كبدة أو سجق", "price": 15, "image": "", "description": ""}, {"name": "علبة مكرونة بالكبدة", "price": 12, "image": "", "description": ""}, {"name": "علبة مكرونة بالسجق", "price": 12, "image": "", "description": ""}], "مقبلات وسلطات": [{"name": "جبنة بالطماطم", "price": 5, "image": "", "description": ""}, {"name": "بابا غنوج", "price": 5, "image": "", "description": ""}, {"name": "طحينة", "price": 4, "image": "", "description": ""}, {"name": "سلطة خضراء", "price": 4, "image": "", "description": ""}, {"name": "باذنجان مخلل", "price": 4, "image": "", "description": ""}, {"name": "ليمون مخلل", "price": 3, "image": "", "description": ""}, {"name": "طماطم مخللة", "price": 3, "image": "", "description": ""}, {"name": "بصل مخلل", "price": 3, "image": "", "description": ""}, {"name": "خيار مخلل", "price": 3, "image": "", "description": ""}, {"name": "مخلل مشكل", "price": 3, "image": "", "description": ""}, {"name": "مخلل عادي", "price": 1, "image": "", "description": ""}], "مشروبات": [{"name": "عصير مانجو", "price": 4, "image": "", "description": ""}, {"name": "عصير غازي", "price": 2.5, "image": "", "description": ""}, {"name": "شاي سادة", "price": 1, "image": "", "description": ""}, {"name": "مياه", "price": 0.5, "image": "", "description": ""}]};
+let MENU = FALLBACK_MENU;
+let menuReady = false;
+async function loadMenu(){
+  try {
+    const r = await fetch('/api/menu', {cache:'no-store'});
+    if (r.ok) { MENU = await r.json(); }
+  } catch(e) {}
+  menuReady = true;
+  renderMenu();
+}
+let cart = JSON.parse(localStorage.getItem('tehabishCart') || '[]');
+let locationData = null;
+
+function money(n) { return Number(n).toFixed(2).replace('.00','') + ' ريال'; }
+
+function renderMenu() {
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const root = document.getElementById('menuGrid');
+  root.innerHTML = '';
+  Object.entries(MENU).forEach(([cat, items]) => {
+    const filtered = items.filter(item => item.name.toLowerCase().includes(q));
+    if (!filtered.length) return;
+    const section = document.createElement('section');
+    section.className = 'category';
+    section.innerHTML = `<h3>${cat}</h3><div class="items"></div>`;
+    const box = section.querySelector('.items');
+    filtered.forEach(item => {
+      const name = item.name; const price = Number(item.price || 0);
+
+      const card = document.createElement('article');
+      card.className = 'item';
+      card.innerHTML = `<div>${item.image ? `<img src="${item.image}" alt="${name}" style="width:100%;height:170px;object-fit:cover;border-radius:18px;margin-bottom:10px">` : ''}<strong>${name}</strong>${item.description ? `<small style="display:block;margin-top:5px;opacity:.7">${item.description}</small>` : ''}<span>${money(price)}</span></div>
+        <button onclick='addToCart(${JSON.stringify(name)}, ${price})'>+ إضافة</button>`;
+      box.appendChild(card);
+    });
+    root.appendChild(section);
+  });
+}
+
+function addToCart(name, price) {
+  const found = cart.find(x => x.name === name);
+  if (found) found.qty++;
+  else cart.push({name, price, qty:1});
+  saveCart();
+}
+
+function changeQty(i, delta) {
+  cart[i].qty += delta;
+  if (cart[i].qty <= 0) cart.splice(i,1);
+  saveCart();
+  renderCart();
+}
+
+function saveCart() {
+  localStorage.setItem('tehabishCart', JSON.stringify(cart));
+  updateCount();
+}
+
+function updateCount() {
+  document.getElementById('cartCount').textContent = cart.reduce((s,x)=>s+x.qty,0);
+}
+
+function openCart() {
+  document.getElementById('cartOverlay').classList.remove('hidden');
+  renderCart();
+}
+function closeCart() { document.getElementById('cartOverlay').classList.add('hidden'); }
+
+function renderCart() {
+  const box = document.getElementById('cartItems');
+  if (!cart.length) {
+    box.innerHTML = '<div class="empty">السلة فاضية. اختار أكلك الأول 😋</div>';
+  } else {
+    box.innerHTML = cart.map((x,i)=>`<div class="cart-row">
+      <div><strong>${x.name}</strong><small>${money(x.price)} × ${x.qty}</small></div>
+      <div class="qty"><button onclick="changeQty(${i},-1)">−</button><b>${x.qty}</b><button onclick="changeQty(${i},1)">+</button></div>
+    </div>`).join('');
+  }
+  const sub = cart.reduce((s,x)=>s+x.price*x.qty,0);
+  document.getElementById('subtotal').textContent = money(sub);
+  document.getElementById('grandTotal').textContent = money(sub + (cart.length ? 5 : 0)) + (cart.length ? ' + أي زيادة حسب الموقع' : '');
+}
+
+function getLocation() {
+  const t = document.getElementById('locationText');
+  if (!navigator.geolocation) { t.textContent='المتصفح لا يدعم تحديد الموقع'; return; }
+  t.textContent='جاري تحديد موقعك...';
+  navigator.geolocation.getCurrentPosition(pos => {
+    const lat = pos.coords.latitude.toFixed(6);
+    const lng = pos.coords.longitude.toFixed(6);
+    locationData = {lat, lng};
+    t.innerHTML = `تم تحديد الموقع: ${lat}, ${lng} <a target="_blank" href="https://www.google.com/maps?q=${lat},${lng}">فتح الخريطة</a>`;
+  }, () => {
+    t.textContent='تعذر تحديد الموقع. اسمح للموقع من إعدادات المتصفح وحاول مرة أخرى.';
+  }, {enableHighAccuracy:true, timeout:10000});
+}
+
+function sendWhatsApp() {
+  if (!cart.length) return alert('أضف صنفًا واحدًا على الأقل.');
+  const name = document.getElementById('customerName').value.trim();
+  const phone = document.getElementById('customerPhone').value.trim();
+  const notes = document.getElementById('notes').value.trim();
+  if (!name || !phone) return alert('اكتب الاسم ورقم الجوال.');
+  if (!locationData) return alert('من فضلك حدد موقع التوصيل أولًا.');
+
+  const sub = cart.reduce((s,x)=>s+x.price*x.qty,0);
+  let msg = `طلب جديد - تحابيش مصرية%0A%0A`;
+  msg += `الاسم: ${name}%0Aالجوال: ${phone}%0A`;
+  msg += `الموقع: https://www.google.com/maps?q=${locationData.lat},${locationData.lng}%0A`;
+  msg += `العنوان/الملاحظات: ${notes || 'لا يوجد'}%0A%0A`;
+  msg += `الأصناف:%0A`;
+  cart.forEach(x => msg += `- ${x.name} × ${x.qty} = ${money(x.price*x.qty)}%0A`);
+  msg += `%0Aقيمة الطلب: ${money(sub)}%0A`;
+  msg += `التوصيل: يبدأ من 5 ريال حسب الموقع%0A`;
+  msg += `الإجمالي المبدئي: ${money(sub+5)} + أي زيادة حسب الموقع`;
+  window.open(`https://wa.me/966592580904?text=${msg}`, '_blank');
+}
+
+renderMenu();
+updateCount();
+loadMenu();
+</script>
+</body>
+</html>
