@@ -23,6 +23,42 @@ main{padding:18px 12px 120px}.food-gallery{display:grid;grid-template-columns:re
 dialog{border:0;border-radius:20px;padding:0;width:min(560px,calc(100% - 22px));max-height:90vh;box-shadow:0 15px 70px #0004}dialog::backdrop{background:#1f100dcc}.modal-head{padding:18px;background:var(--red);color:white;display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;font-size:20px}.close{border:0;background:#ffffff25;color:white;border-radius:9px;padding:7px 11px;font-size:18px}.modal-body{padding:16px;overflow:auto;max-height:calc(90vh - 70px)}.cartline{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #eee}.cartline .name{flex:1;line-height:1.4}.qty{display:flex;align-items:center;gap:8px}.qty button{border:0;background:#f7e8cf;border-radius:8px;width:30px;height:30px;font-size:18px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:13px;font-weight:700}.field input,.field textarea,.field select{width:100%;border:1px solid #e4d7c8;border-radius:10px;padding:11px;font:inherit;background:white}.total{display:flex;justify-content:space-between;padding:14px 0;font-size:18px;font-weight:900}.wa{width:100%;background:#16834b;color:white;border:0;border-radius:12px;padding:14px;font-weight:900;font-size:16px;margin-top:6px;cursor:pointer}.note{font-size:12px;color:var(--muted);line-height:1.7;margin-top:10px}
 @media(min-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.item{padding:16px}.item h3{font-size:16px}main{padding:24px 20px 120px}}
 @media(max-width:380px){.grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.primary{padding:12px}.brand{align-items:flex-start}}
+
+/* تحسين بصري للمنيو */
+body{background:radial-gradient(circle at 10% 8%,#fff0c5 0,transparent 26%),#fffaf1}
+header{padding:20px 16px 22px;background:linear-gradient(125deg,#711018 0%,#a71920 55%,#c52b25 100%);position:relative;overflow:hidden}
+header:after{content:"";position:absolute;width:230px;height:230px;border:30px solid #ffc92820;border-radius:50%;left:-85px;top:-105px;pointer-events:none}
+.brand{position:relative;z-index:1}.logo{width:88px;height:88px;border-radius:24px;box-shadow:0 7px 22px #310b0b45;border:3px solid #ffdf69}
+h1{font-family:"Cairo","Tajawal",sans-serif;font-weight:900;letter-spacing:-.5px}
+header p{font-size:15px;font-weight:700}
+.info{position:relative;z-index:1}
+main{padding-top:20px}
+.food-gallery{gap:10px;margin-bottom:20px}
+.food-gallery img{height:clamp(112px,30vw,190px);border:3px solid white;border-radius:20px;box-shadow:0 7px 18px #6a371018;object-fit:cover}
+.toprow{position:sticky;top:8px;z-index:3;padding:5px 0;background:#fffaf0eF;backdrop-filter:blur(8px);border-radius:16px}
+.search{border:1px solid #e9d7b9;border-radius:16px;box-shadow:0 3px 12px #4a1e0d0b;font-family:inherit}
+.section-title{margin:24px 0 13px}
+.section-title h2{font-family:"Cairo",sans-serif;font-size:23px;font-weight:900;letter-spacing:-.4px}
+.section-title:before{content:"";width:8px;height:28px;border-radius:8px;background:var(--red);display:block}
+.section-title:after{height:4px;background:linear-gradient(90deg,var(--yellow),#ffe9a0);max-width:90px}
+.categories{padding:5px 1px 15px;scrollbar-width:none}
+.categories::-webkit-scrollbar{display:none}
+.cat{border:1px solid #ead8b8;background:#fffdf8;border-radius:14px;padding:11px 15px;font-family:inherit;font-weight:800;box-shadow:0 3px 9px #5d31100b;transition:transform .15s,background .15s}
+.cat.active{background:var(--red);border-color:var(--red);color:white;box-shadow:0 5px 13px #a7192033}
+.grid{gap:13px}
+.item{position:relative;overflow:hidden;border:1px solid #f0e0c7;border-radius:20px;padding:15px;background:linear-gradient(155deg,#fff 0%,#fffdf8 100%);box-shadow:0 6px 18px #65370b0b;gap:13px;min-height:130px;transition:transform .16s,box-shadow .16s}
+.item:before{content:"";position:absolute;right:0;top:0;width:5px;height:100%;background:linear-gradient(var(--yellow),#f7b914);border-radius:0 20px 20px 0}
+.item:active{transform:scale(.985)}
+.item h3{font-family:"Cairo","Tajawal",sans-serif;font-size:15px;font-weight:800;line-height:1.65;padding-right:3px;color:#34221d}
+.item-bottom{padding-top:10px;border-top:1px dashed #eadbc5}
+.price{font-family:"Cairo",sans-serif;font-size:17px;background:#fff3c9;border:1px solid #ffe59a;border-radius:11px;padding:5px 9px;color:#8c171c}
+.add{font-family:inherit;border-radius:12px;padding:10px 13px;background:linear-gradient(135deg,#b41d24,#86131b);box-shadow:0 4px 9px #a719202b;font-weight:900}
+.add:before{content:"＋ ";font-size:15px}
+.cartbar{background:#fffdf8ed;backdrop-filter:blur(12px);border-top:1px solid #f1dfc2;box-shadow:0 -8px 28px #38180f16}
+.primary{border-radius:14px;box-shadow:0 4px 10px #d9a30030;font-family:inherit}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.item{padding:19px;min-height:145px}.item h3{font-size:17px}.food-gallery{gap:14px}}
+@media(max-width:380px){.food-gallery{gap:6px}.food-gallery img{height:94px;border-radius:14px}.brand .logo{width:70px;height:70px;border-radius:20px}.item{padding:13px}.item h3{font-size:14px}}
+
 </style>
 </head>
 <body>
