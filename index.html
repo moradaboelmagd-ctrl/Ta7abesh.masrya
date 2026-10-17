@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#a71920">
+<title>تحابيش مصرية | اطلب أكلتك</title>
+<style>
+:root{--red:#a71920;--red2:#7f1017;--yellow:#ffc928;--cream:#fff9e9;--ink:#281d1a;--muted:#746662;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:#fffaf0;color:var(--ink);font-family:Tahoma,Arial,sans-serif}
+header{background:linear-gradient(135deg,var(--red2),var(--red));color:white;padding:22px 16px 18px;border-bottom:6px solid var(--yellow)}
+.wrap{max-width:1100px;margin:auto}.brand{display:flex;align-items:center;gap:12px}.logo{width:58px;height:58px;border-radius:50%;background:var(--yellow);color:var(--red);display:grid;place-items:center;font-size:25px;font-weight:900;border:3px solid #fff5d0}
+h1{font-size:clamp(24px,5vw,36px);margin:0 0 5px}header p{margin:0;color:#ffe9b2;font-size:14px}
+.info{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.pill{background:#ffffff19;border:1px solid #ffffff55;border-radius:999px;padding:7px 11px;font-size:12px}
+main{padding:18px 12px 120px}.toprow{display:flex;gap:10px;align-items:center;margin-bottom:14px}.search{flex:1;min-width:0;border:1px solid #e5d9c9;border-radius:14px;padding:13px 14px;font-size:16px;background:white;outline-color:var(--red)}
+.section-title{display:flex;align-items:center;gap:10px;margin:20px 0 12px}.section-title h2{font-size:21px;margin:0}.section-title:after{content:"";height:3px;flex:1;background:var(--yellow);border-radius:9px}
+.categories{display:flex;gap:8px;overflow-x:auto;padding:3px 0 12px;scrollbar-width:thin}.cat{border:1px solid #e6d7bd;background:white;color:var(--red);border-radius:999px;padding:10px 14px;white-space:nowrap;font-weight:700;cursor:pointer}.cat.active{background:var(--yellow);border-color:var(--yellow);color:#3a1a12}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.item{background:white;border:1px solid #f0e5d4;border-radius:16px;padding:13px;display:flex;flex-direction:column;gap:10px;box-shadow:0 3px 10px #6a37100a;min-width:0}.item h3{font-size:15px;line-height:1.55;margin:0;flex:1}.item-bottom{display:flex;align-items:center;justify-content:space-between;gap:6px}.price{font-weight:900;color:var(--red);font-size:16px;white-space:nowrap}.add{border:0;background:var(--red);color:white;border-radius:10px;padding:9px 12px;font-weight:700;cursor:pointer}.add:active{transform:scale(.97)}
+.empty{color:var(--muted);text-align:center;padding:30px}
+.cartbar{position:fixed;bottom:0;left:0;right:0;background:#fff;box-shadow:0 -5px 22px #38180f20;padding:12px max(12px,env(safe-area-inset-right)) calc(12px + env(safe-area-inset-bottom));z-index:5}.cartinner{max-width:1100px;margin:auto;display:flex;align-items:center;gap:10px}.cart-summary{flex:1;min-width:0}.cart-summary strong{display:block;font-size:15px}.cart-summary small{color:var(--muted)}.primary{background:var(--yellow);color:#341713;border:0;border-radius:12px;padding:13px 16px;font-weight:900;font-size:15px;cursor:pointer}.secondary{background:#f5e8d8;border:0;border-radius:10px;padding:9px 12px;cursor:pointer}
+dialog{border:0;border-radius:20px;padding:0;width:min(560px,calc(100% - 22px));max-height:90vh;box-shadow:0 15px 70px #0004}dialog::backdrop{background:#1f100dcc}.modal-head{padding:18px;background:var(--red);color:white;display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;font-size:20px}.close{border:0;background:#ffffff25;color:white;border-radius:9px;padding:7px 11px;font-size:18px}.modal-body{padding:16px;overflow:auto;max-height:calc(90vh - 70px)}.cartline{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid #eee}.cartline .name{flex:1;line-height:1.4}.qty{display:flex;align-items:center;gap:8px}.qty button{border:0;background:#f7e8cf;border-radius:8px;width:30px;height:30px;font-size:18px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:13px;font-weight:700}.field input,.field textarea,.field select{width:100%;border:1px solid #e4d7c8;border-radius:10px;padding:11px;font:inherit;background:white}.total{display:flex;justify-content:space-between;padding:14px 0;font-size:18px;font-weight:900}.wa{width:100%;background:#16834b;color:white;border:0;border-radius:12px;padding:14px;font-weight:900;font-size:16px;margin-top:6px;cursor:pointer}.note{font-size:12px;color:var(--muted);line-height:1.7;margin-top:10px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.item{padding:16px}.item h3{font-size:16px}main{padding:24px 20px 120px}}
+@media(max-width:380px){.grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.primary{padding:12px}.brand{align-items:flex-start}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="brand"><div class="logo">ت</div><div><h1>تحابيش مصرية</h1><p>أصل الطعم المصري 🇪🇬</p></div></div>
+<div class="info"><span class="pill">📍 حي مشرفة – جدة</span><span class="pill">🕒 من بعد الفجر حتى منتصف الليل</span><span class="pill">💵 الدفع عند الاستلام</span></div>
+</div></header>
+<main class="wrap">
+<div class="toprow"><input id="search" class="search" placeholder="دور على أكلة بتحبها..." aria-label="ابحث عن صنف"></div>
+<div class="section-title"><h2>اختار من المنيو</h2></div>
+<nav id="categories" class="categories" aria-label="أقسام المنيو"></nav>
+<div id="menu" class="grid"></div>
+</main>
+<div class="cartbar"><div class="cartinner"><div class="cart-summary"><strong id="cartCount">السلة فاضية</strong><small id="cartTotal">أضف أصنافك المفضلة</small></div><button class="primary" id="openCart">عرض السلة 🛒</button></div></div>
+<dialog id="cartDialog"><div class="modal-head"><h2>طلبك</h2><button class="close" id="closeCart" aria-label="إغلاق">✕</button></div><div class="modal-body">
+<div id="cartLines"></div><div class="total"><span>إجمالي الأصناف</span><span id="subtotal">0 ر.س</span></div>
+<div class="formgrid">
+<div class="field"><label for="customer">الاسم</label><input id="customer" placeholder="اسمك" autocomplete="name"></div>
+<div class="field"><label for="phone">رقم الجوال</label><input id="phone" placeholder="05xxxxxxxx" inputmode="tel"></div>
+<div class="field full"><label for="address">العنوان بالتفصيل</label><textarea id="address" rows="2" placeholder="الحي، الشارع، رقم المبنى"></textarea></div>
+<div class="field full"><label for="area">منطقة التوصيل ورسومها</label><select id="area"><option value="5">رسوم التوصيل تبدأ من 5 ريال — تؤكد حسب المنطقة</option><option value="5">مشرفة — 5 ريال (تأكيد عند الطلب)</option><option value="7">الأحياء القريبة — 7 ريال (تأكيد عند الطلب)</option><option value="10">أحياء أخرى — 10 ريال (تأكيد عند الطلب)</option></select></div>
+<div class="field full"><label for="notes">ملاحظات على الطلب (اختياري)</label><textarea id="notes" rows="2" placeholder="مثلاً: من غير شطة"></textarea></div>
+</div>
+<div class="total"><span>الإجمالي مع التوصيل</span><span id="grandTotal">5 ر.س</span></div>
+<button class="wa" id="sendOrder">إرسال الطلب على واتساب</button>
+<p class="note">رسوم التوصيل الظاهرة مبدئية، وقد تختلف حسب موقعك. الدفع نقدًا عند الاستلام. إرسال الطلب يفتح واتساب لمراجعة تفاصيل طلبك قبل الإرسال.</p>
+</div></dialog>
+<script>
+const ITEMS = [{"category": "أصناف متنوعة", "name": "علبة مسقعة", "price": 9.0}, {"category": "أصناف متنوعة", "name": "علبة حمص", "price": 7.0}, {"category": "أصناف متنوعة", "name": "طلب قرنبيط (زهرة)", "price": 6.0}, {"category": "أصناف متنوعة", "name": "طلب عجة فرنساوي", "price": 6.0}, {"category": "أصناف متنوعة", "name": "طلب عجة طعمية", "price": 6.0}, {"category": "أصناف متنوعة", "name": "طلب بصارة", "price": 6.0}, {"category": "الكبدة والسجق", "name": "طلب كبدة سادة", "price": 13.0}, {"category": "الكبدة والسجق", "name": "طلب سجق سادة", "price": 12.0}, {"category": "الكبدة والسجق", "name": "وجبة كبدة أو سجق", "price": 17.0}, {"category": "الكبدة والسجق", "name": "علبة مكرونة بالكبدة", "price": 13.0}, {"category": "الكبدة والسجق", "name": "علبة مكرونة بالسجق", "price": 13.0}, {"category": "المقبلات والمخللات", "name": "جبنة بالطماطم", "price": 7.0}, {"category": "المقبلات والمخللات", "name": "بابا غنوج", "price": 7.0}, {"category": "المقبلات والمخللات", "name": "طحينة", "price": 5.0}, {"category": "المقبلات والمخللات", "name": "سلطة خضراء", "price": 5.0}, {"category": "المقبلات والمخللات", "name": "باذنجان مخلل", "price": 5.0}, {"category": "المقبلات والمخللات", "name": "ليمون مخلل", "price": 4.0}, {"category": "المقبلات والمخللات", "name": "طماطم مخللة", "price": 4.0}, {"category": "المقبلات والمخللات", "name": "بصل مخلل", "price": 4.0}, {"category": "المقبلات والمخللات", "name": "خيار مخلل", "price": 4.0}, {"category": "المقبلات والمخللات", "name": "مخلل مشكل", "price": 4.0}, {"category": "المقبلات والمخللات", "name": "مخلل عادي", "price": 3.0}, {"category": "المشروبات", "name": "عصير مانجو", "price": 5.0}, {"category": "المشروبات", "name": "مشروب غازي", "price": 3.0}, {"category": "المشروبات", "name": "شاي سادة", "price": 2.0}, {"category": "المشروبات", "name": "مياه", "price": 1.0}, {"category": "العلب والطلبات", "name": "علبة فول", "price": 6.0}, {"category": "العلب والطلبات", "name": "فول بالصلصة", "price": 6.0}, {"category": "العلب والطلبات", "name": "علبة فول إسكندراني", "price": 7.0}, {"category": "العلب والطلبات", "name": "علبة فول بالسجق", "price": 9.0}, {"category": "العلب والطلبات", "name": "فول بالبيض (مسلوق/مقلي)", "price": 8.0}, {"category": "العلب والطلبات", "name": "فول بالليمون المعصفر", "price": 7.0}, {"category": "العلب والطلبات", "name": "فول باالبسطرمة", "price": 9.0}, {"category": "العلب والطلبات", "name": "علبة فول مصلّح", "price": 9.0}, {"category": "العلب والطلبات", "name": "طعمية 3 حبات", "price": 1.5}, {"category": "العلب والطلبات", "name": "قرص كبير عادي", "price": 1.5}, {"category": "العلب والطلبات", "name": "قرص كبير سمسم", "price": 2.0}, {"category": "العلب والطلبات", "name": "قرص محشي عادي", "price": 2.0}, {"category": "العلب والطلبات", "name": "قرص محشي بسطرمة", "price": 3.0}, {"category": "العلب والطلبات", "name": "قرص محشي كيري", "price": 3.0}, {"category": "العلب والطلبات", "name": "قرص محشي موزاريلا / شيدر", "price": 3.0}, {"category": "العلب والطلبات", "name": "قرص محشي ليمون معصفر", "price": 3.0}, {"category": "العلب والطلبات", "name": "طلب بطاطس صوابع", "price": 6.0}, {"category": "العلب والطلبات", "name": "طلب بطاطس شيبسي", "price": 6.0}, {"category": "العلب والطلبات", "name": "بطاطس بوريه (مهروسة)", "price": 6.0}, {"category": "العلب والطلبات", "name": "طلب بطاطس جمبري", "price": 7.0}, {"category": "العلب والطلبات", "name": "طلب باذنجان مقلي", "price": 6.0}, {"category": "العلب والطلبات", "name": "طلب بيض مقلي", "price": 5.0}, {"category": "العلب والطلبات", "name": "طلب شكشوكة", "price": 7.0}, {"category": "العلب والطلبات", "name": "طلب بيض مدحرج بالسمن", "price": 6.0}, {"category": "العلب والطلبات", "name": "طلب بيض بالجبنة", "price": 7.0}, {"category": "العلب والطلبات", "name": "طلب بيض بالبسطرمة", "price": 9.0}, {"category": "العلب والطلبات", "name": "بيض بيتزا", "price": 10.0}, {"category": "العلب والطلبات", "name": "طلب بيض أباتشي", "price": 10.0}, {"category": "السندوتشات", "name": "سندوتشات الطعمية — طعمية تجايش", "price": 4.0}, {"category": "السندوتشات", "name": "سندوتش طعمية بالبيض", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش طعمية بالحمص", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش طعمية إسكندراني", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش طعمية محشية", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش طعمية كل شيء", "price": 7.0}, {"category": "السندوتشات", "name": "سندوتش فول عادي", "price": 4.0}, {"category": "السندوتشات", "name": "سندوتش فول زيت حار", "price": 4.0}, {"category": "السندوتشات", "name": "سندوتش فول إسكندراني", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش فول بالبيض", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش فول بالليمون المعصفر", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش فول بالسجق", "price": 8.0}, {"category": "السندوتشات", "name": "سندوتش فول ديناميت", "price": 7.0}, {"category": "السندوتشات", "name": "سندوتش بيض مقلي أو مسلوق", "price": 4.0}, {"category": "السندوتشات", "name": "سندوتش شكشوكة", "price": 4.0}, {"category": "السندوتشات", "name": "سندوتش بيض بالجبنة", "price": 6.0}, {"category": "السندوتشات", "name": "سندوتش بيض بالبسطرمة", "price": 8.0}, {"category": "السندوتشات", "name": "سندوتش بيض بيتزا", "price": 9.0}, {"category": "السندوتشات", "name": "سندوتش بيض أباتشي", "price": 9.0}, {"category": "السندوتشات", "name": "سندوتش بطاطس صوابع أو شيبسي", "price": 4.0}, {"category": "السندوتشات", "name": "سندوتش بطاطس كاتشب/مايونيز", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش بطاطس بالبيض", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش بطاطس بالجبنة", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش بطاطس جمبري", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش كبدة إسكندراني", "price": 7.0}, {"category": "السندوتشات", "name": "سندوتش سجق بلدي", "price": 7.0}, {"category": "السندوتشات", "name": "سندوتش جبنة بالطماطم", "price": 4.0}, {"category": "السندوتشات", "name": "سندوتش قرنبيط", "price": 4.0}, {"category": "السندوتشات", "name": "سندوتش عجة", "price": 5.0}, {"category": "السندوتشات", "name": "سندوتش بابا غنوج", "price": 4.0}, {"category": "السندوتشات", "name": "سندوتش مسقعة", "price": 4.0}, {"category": "السندوتشات", "name": "سندوتش حلاوة بالقشطة", "price": 5.0}];
+const CATEGORIES = ["السندوتشات", "أصناف متنوعة", "الكبدة والسجق", "المقبلات والمخللات", "المشروبات", "العلب والطلبات"];
+const WA_NUMBER = "966592580904";
+let activeCategory = "السندوتشات";
+const cart = new Map();
+const $ = id => document.getElementById(id);
+const money = n => Number(n).toLocaleString("ar-SA",{maximumFractionDigits:2})+" ر.س";
+function renderCats(){
+  $("categories").innerHTML = CATEGORIES.map(c=>`<button class="cat ${c===activeCategory?"active":""}" data-cat="${escapeHtml(c)}">${escapeHtml(c)}</button>`).join("");
+  $("categories").querySelectorAll("button").forEach(b=>b.onclick=()=>{activeCategory=b.dataset.cat;renderCats();renderMenu()});
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderMenu(){
+ const q=$("search").value.trim().toLowerCase();
+ const list=ITEMS.filter(i=>(!activeCategory||i.category===activeCategory)&&i.name.toLowerCase().includes(q));
+ $("menu").innerHTML=list.length?list.map((i,idx)=>`<article class="item"><h3>${escapeHtml(i.name)}</h3><div class="item-bottom"><span class="price">${money(i.price)}</span><button class="add" data-name="${escapeHtml(i.name)}">+ أضف</button></div></article>`).join(""):`<div class="empty">مفيش أصناف مطابقة للبحث.</div>`;
+ $("menu").querySelectorAll(".add").forEach(b=>b.onclick=()=>addItem(b.dataset.name));
+}
+function addItem(name){cart.set(name,(cart.get(name)||0)+1);updateCart()}
+function changeQty(name,delta){let q=(cart.get(name)||0)+delta;if(q<=0)cart.delete(name);else cart.set(name,q);updateCart();renderCart()}
+function subtotal(){return [...cart.entries()].reduce((s,[name,q])=>s+ITEMS.find(i=>i.name===name).price*q,0)}
+function updateCart(){const count=[...cart.values()].reduce((a,b)=>a+b,0);$("cartCount").textContent=count?`${count} صنف في السلة`:"السلة فاضية";$("cartTotal").textContent=count?`قيمة الأصناف: ${money(subtotal())}`:"أضف أصنافك المفضلة";$("subtotal").textContent=money(subtotal());$("grandTotal").textContent=money(subtotal()+Number($("area").value||5))}
+function renderCart(){
+ $("cartLines").innerHTML=cart.size?[...cart.entries()].map(([name,q])=>{const item=ITEMS.find(i=>i.name===name);return `<div class="cartline"><div class="name"><strong>${escapeHtml(name)}</strong><br><small>${money(item.price)} × ${q} = ${money(item.price*q)}</small></div><div class="qty"><button data-d="-1" data-n="${escapeHtml(name)}">−</button><b>${q}</b><button data-d="1" data-n="${escapeHtml(name)}">+</button></div></div>`}).join(""):`<p class="empty">لسه ما ضفتش أصناف للسلة.</p>`;
+ $("cartLines").querySelectorAll("button").forEach(b=>b.onclick=()=>changeQty(b.dataset.n,Number(b.dataset.d)));
+ updateCart()
+}
+$("search").addEventListener("input",renderMenu);
+$("openCart").onclick=()=>{renderCart();$("cartDialog").showModal()};
+$("closeCart").onclick=()=>$("cartDialog").close();
+$("area").onchange=updateCart;
+$("sendOrder").onclick=()=>{
+ if(!cart.size){alert("ضيف صنف واحد على الأقل للسلة.");return}
+ const name=$("customer").value.trim(), phone=$("phone").value.trim(), address=$("address").value.trim();
+ if(!name||!phone||!address){alert("من فضلك اكتب الاسم ورقم الجوال والعنوان.");return}
+ const lines=[...cart.entries()].map(([n,q])=>{const i=ITEMS.find(x=>x.name===n);return `• ${n} × ${q} = ${money(i.price*q)}`}).join("\n");
+ const fee=Number($("area").value||5);
+ const msg=`طلب جديد من موقع تحابيش مصرية\nالاسم: ${name}\nالجوال: ${phone}\nالعنوان: ${address}\n\nالأصناف:\n${lines}\n\nإجمالي الأصناف: ${money(subtotal())}\nرسوم التوصيل التقديرية: ${money(fee)}\nالإجمالي التقديري: ${money(subtotal()+fee)}\nالدفع: عند الاستلام\nملاحظات: ${$("notes").value.trim()||"لا يوجد"}\n\nبرجاء تأكيد رسوم التوصيل حسب المنطقة.`;
+ window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank");
+};
+renderCats();renderMenu();updateCart();
+</script>
+</body></html>
